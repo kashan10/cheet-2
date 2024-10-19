@@ -1,0 +1,9 @@
+Scan adb port: nmap ip -sV -p 5555 
+Connect adb: adb connect IP:5555 
+Access mobile device: adb shell 
+Elevate privilege using:sudo -i (if it is possile) 
+pwd-->ls-->cd sdcard/notifi/Soyana 
+Download files:adb pull /path Do it in another shell, without adb connection! 
+calcolate entropy : ent file.elf 
+After selecting file.elf with highest entropy, 
+SHA 384:sha384sum file.elf 
