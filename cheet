@@ -6,6 +6,8 @@ pwd-->ls-->cd sdcard/notifi/Soyana
 Download files:adb pull /path Do it in another shell, without adb connection! 
 calcolate entropy : ent file.elf 
 After selecting file.elf with highest entropy, 
+
+
 SHA 384:sha384sum file.elf 
 
 
@@ -50,3 +52,8 @@ Crack the SMB credentials knowing username to obtain file stored into share Brut
 hydra -l <USER> -P /usr/share/wordlists/rockyou.txt <TARGET_IP> 
 smb Download file stored into share 
 smbmap -u <USER> -p '<PW>' -H <TARGET_IP> --download 'C$\filename.txt'
+
+CrypTool 
+Connect to ftp using cmd: ftp IP 
+After connect with FTP go to the file and download them using get or mget commands: get file.txtget file1.txt 
+Decrypt file: open CrypTool program -> Encrypt/Decrypt -> Symmetric (modern) -> DES (ECB)
